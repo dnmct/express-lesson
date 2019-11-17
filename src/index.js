@@ -23,6 +23,10 @@ app.post("/", (req, res) => {
   res.send({ message: "ok" });
 });
 
+app.get("/project/:id", (req, res) => {
+  res.send({ projectId: req.params.id });
+});
+
 app
   .route("/data")
   .get((req, res) => {
