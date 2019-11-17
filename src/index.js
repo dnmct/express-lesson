@@ -23,6 +23,15 @@ app.post("/", (req, res) => {
   res.send({ message: "ok" });
 });
 
+app
+  .route("/data")
+  .get((req, res) => {
+    res.send({ ok: true });
+  })
+  .post()
+  .put()
+  .delete();
+
 app.listen(3000, () => {
   console.log("Server is running");
 });
