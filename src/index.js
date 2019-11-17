@@ -7,6 +7,13 @@ const app = express();
 app.use(json());
 app.use(morgan("dev"));
 
+const log = (req, res, next) => {
+  console.log("logging");
+  next();
+};
+
+app.use(log);
+
 app.get("/", (req, res, next) => {
   res.send({ message: "hello" });
 });
